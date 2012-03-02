@@ -1,0 +1,33 @@
+<h1>Listing opticians</h1>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Roomnumber</th>
+    <th>Opticianregistrationnumber</th>
+    <th>Phonenumber</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @opticians.each do |optician| %>
+  <tr>
+    <td><%= optician.firstname %></td>
+    <td><%= optician.lastname %></td>
+    <td><%= optician.roomnumber %></td>
+    <td><%= optician.opticianregistrationnumber %></td>
+    <td><%= optician.phonenumber %></td>
+    <td><%= optician.email %></td>
+    <td><%= link_to 'Show', optician %></td>
+    <td><%= link_to 'Edit', edit_optician_path(optician) %></td>
+    <td><%= link_to 'Destroy', optician, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Optician', new_optician_path %>

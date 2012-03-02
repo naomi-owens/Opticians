@@ -1,0 +1,16 @@
+<%unless@patient.appointments.empty? %>
+<p><b>Appointments of <%=@patient.firstname %> <%=@patient.lastname %>:</b></p>
+<p>
+<%@patient.appointments.each do |appointment| %>
+Start Time: <%= appointment.starttime.strftime("%H:%M") %> <br \>
+End Time: <%= appointment.endtime.strftime("%H:%M") %> <br \>
+Date: <%= appointment.date.strftime("%d/%m/%Y") %> <br \>
+Appointment Type: <%= appointment.appointmenttype %> <br \>
+Optician Name: <%= Optician.find_by_id(appointment.optician_id).firstname %>
+<%= Optician.find_by_id(appointment.optician_id).lastname %><br \>
+Created <%=time_ago_in_words(appointment.created_at)%>.<br \><br \><br \>
+<%end%>
+</p>
+<%else%>
+<p>No record yet</p>
+<%end%>

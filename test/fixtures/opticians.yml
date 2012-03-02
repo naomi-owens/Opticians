@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  roomnumber: MyString
+  opticianregistrationnumber: MyString
+  phonenumber: MyString
+  email: MyString
+
+two:
+  firstname: MyString
+  lastname: MyString
+  roomnumber: MyString
+  opticianregistrationnumber: MyString
+  phonenumber: MyString
+  email: MyString

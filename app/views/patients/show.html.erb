@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @patient.title %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @patient.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @patient.lastname %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @patient.dob %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @patient.email %>
+</p>
+
+<p>
+  <b>Mobilenumber:</b>
+  <%= @patient.mobilenumber %>
+</p>
+
+<p>
+  <b>Homenumber:</b>
+  <%= @patient.homenumber %>
+</p>
+
+<p>
+  <b>Worknumber:</b>
+  <%= @patient.worknumber %>
+</p>
+
+<p>
+  <b>Memo:</b>
+  <%= @patient.memo %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @patient.gender %>
+</p>
+
+<p>
+  <b>Lastvisit:</b>
+  <%= @patient.lastvisit %>
+</p>
+
+<%unless@patient.appointments.empty? %>
+<p><b>Appointments of <%=@patient.firstname %> <%=@patient.lastname %>:</b></p>
+<p>
+<%@patient.appointments.each do |appointment| %>
+Start Time: <%= appointment.starttime %> <br \>
+End Time: <%= appointment.endtime %> <br \>
+Date: <%= appointment.date %> <br \>
+Appointment Type: <%= appointment.appointmenttype %> <br \>
+Status: <%= appointment.status %> <br \>
+Patient ID: <%= appointment.patient_id %> <br \>
+Optician ID: <%= appointment.optician_id %> <br \>
+Created <%=time_ago_in_words(appointment.created_at)%>.<br \><br \><br \>
+<%end%>
+</p>
+<%else%>
+<p>No record yet</p>
+<%end%>
+
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>

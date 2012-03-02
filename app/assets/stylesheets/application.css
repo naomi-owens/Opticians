@@ -1,0 +1,119 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will
+* include all the files listed below.
+* 
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets,
+* vendor/assets/stylesheets, or vendor/assets/stylesheets of plugins, if any,
+* can be referenced here using a relative path.
+* 
+* You're free to add application-wide styles to this file and they'll appear
+* at the top of the compiled file, but it's generally better to create a new
+* file per style scope.
+* 
+*= require_self
+*= require_tree .
+*/
+
+/* START_HIGHLIGHT */
+nav {
+float: right;
+}
+
+nav {
+background-color: #2C2930;
+padding: 0 0.7em;
+white-space: nowrap;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+}
+
+nav ul li {
+font: small-caps 17px/17px "Arial", serif;
+list-style-type: none;
+display: inline-block;
+padding: 0.2em 0;
+color: #DC631B;
+}
+
+nav ul li a {
+padding: 0 5px;
+font-weight: bold;
+color: #09c;
+}
+
+nav ul li a:visited {
+color: #09c;
+}
+
+nav ul li a:hover {
+text-decoration: underline;
+}
+
+#banners{
+background:#000000;
+padding: 10px;
+border-bottom: 2px solid;
+font: small-caps 40px/40px "Arial", serif;
+color: #DC631B;
+text-align: center;
+img {float: left;}
+}
+
+#orange{
+background: #DC631B;
+}
+
+#search{
+    font: small-caps 17px/17px "Arial", serif;
+    color: #DC631B;
+    text-align: right;
+}
+
+#notice {
+color: #000 !important;
+border: 2px solid red;
+padding: 1em;
+margin-bottom: 2em;
+background-color: #f0f0f0;
+font: bold smaller sans-serif;
+}
+
+#columns {
+background: #FFE8F4;
+
+#main {
+margin-left: 17em;
+padding: 1em;
+background: white;
+}
+
+
+
+#side {
+float: left;
+padding: 1em 2em;
+width: 13em;
+background: #141;
+
+ul {
+padding: 0;
+
+li {
+list-style: none;
+
+a {
+color: #bfb;
+font-size: small;
+}
+}
+}
+}
+
+}
+#all{
+background: #6F6F6F;
+}
+/* END_HIGHLIGHT */

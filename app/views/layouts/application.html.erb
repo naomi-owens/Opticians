@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html id = "all">
+    <head>
+	<%= link_to "Admin", signin_path %>
+        <title>Opticians</title>
+        <%= stylesheet_link_tag "application" %>
+        <%= javascript_include_tag "application" %>
+        <%=csrf_meta_tags %>
+    </head>
+    <body id = "orange">
+        <div id="banners">
+            <%= image_tag("glasses2.jpg", :size => "160x130")%>
+            <%= @page_title || "Opticians"%>
+            <div id = "search">
+                <%= render :partial => 'patients/search' %>
+            </div>
+        </div>
+        <nav>
+            <ul>
+        <% if !signed_in? %>
+		
+			<li><%= link_to "Sign In", signin_path %></li>
+			<li><%= link_to "Register", register_path %></li>
+		<% else %>
+			<li>Signed in as: <%=@current_patient.firstname%> <%=@current_patient.lastname%></li>
+			<li><%= link_to "Sign Out", signout_path %></li>
+		<%end %>
+            <li><%= link_to "Home", home_path %></li>
+            <li><%= link_to "questions"%></li>
+            <li><%= link_to "News"%></li>
+            <li><%= mail_to "naomiowe@gmail.com", "contact us"%></li>
+			
+            </ul>
+        </nav>
+        <div id="main">
+            <%= yield %>
+        </div>
+    </body>
+</html>

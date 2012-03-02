@@ -1,0 +1,41 @@
+<%= form_for(@optician) do |f| %>
+  <% if @optician.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@optician.errors.count, "error") %> prohibited this optician from being saved:</h2>
+
+      <ul>
+      <% @optician.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :roomnumber %><br />
+    <%= f.text_field :roomnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :opticianregistrationnumber %><br />
+    <%= f.text_field :opticianregistrationnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :phonenumber %><br />
+    <%= f.text_field :phonenumber %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

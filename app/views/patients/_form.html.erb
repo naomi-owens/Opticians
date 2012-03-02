@@ -1,0 +1,68 @@
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Title" %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label "First Name" %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label "Last Name" %><br />
+    <%= f.text_field :lastname %>
+  <div class="field">
+    <%= f.label "Password" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label "Email" %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label "Address" %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label "DOB" %><br />
+    <%= f.date_select :dob, :start_year => 1910, :end_year=> 2010 %>
+  </div>
+  <div class="field">
+    <%= f.label "Mobile" %><br />
+    <%= f.text_field :mobilenumber %>
+  </div>
+  <div class="field">
+    <%= f.label "Home" %><br />
+    <%= f.text_field :homenumber %>
+  </div>
+  <div class="field">
+    <%= f.label "Work" %><br />
+    <%= f.text_field :worknumber %>
+  </div>
+  <div class="field">
+    <%= f.label "Memo" %><br />
+    <%= f.text_area :memo %>
+  </div>
+  <div class="field">
+    <%= f.label "Gender" %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label "Last Visit" %><br />
+    <%= f.date_select :lastvisit, :start_year => Time.now.year - 110, :end_year => Time.now.year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

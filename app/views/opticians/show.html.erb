@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @optician.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @optician.lastname %>
+</p>
+
+<p>
+  <b>Roomnumber:</b>
+  <%= @optician.roomnumber %>
+</p>
+
+<p>
+  <b>Opticianregistrationnumber:</b>
+  <%= @optician.opticianregistrationnumber %>
+</p>
+
+<p>
+  <b>Phonenumber:</b>
+  <%= @optician.phonenumber %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @optician.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_optician_path(@optician) %> |
+<%= link_to 'Back', opticians_path %>

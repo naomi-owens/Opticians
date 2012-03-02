@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  starttime: 2012-02-08 11:41:48
+  endtime: 2012-02-08 11:41:48
+  date: 2012-02-08
+  appointmenttype: MyString
+  status: MyString
+  patient_id: 1
+  optician_id: 1
+
+two:
+  starttime: 2012-02-08 11:41:48
+  endtime: 2012-02-08 11:41:48
+  date: 2012-02-08
+  appointmenttype: MyString
+  status: MyString
+  patient_id: 1
+  optician_id: 1

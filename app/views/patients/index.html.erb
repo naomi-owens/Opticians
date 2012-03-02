@@ -1,0 +1,45 @@
+<h1>Listing patients</h1>
+<%= will_paginate @patients%>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Address</th>
+    <th>Dob</th>
+    <th>Email</th>
+    <th>Mobile Number</th>
+    <th>Home Number</th>
+    <th>Work Number</th>
+    <th>Memo</th>
+    <th>Gender</th>
+    <th>Last Visit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @patients.each do |patient| %>
+  <tr>
+    <td><%= patient.title %></td>
+    <td><%= patient.firstname %></td>
+    <td><%= patient.lastname %></td>
+    <td><%= patient.address %></td>
+    <td><%= patient.dob %></td>
+    <td><%= patient.email %></td>
+    <td><%= patient.mobilenumber %></td>
+    <td><%= patient.homenumber %></td>
+    <td><%= patient.worknumber %></td>
+    <td><%= patient.memo %></td>
+    <td><%= patient.gender %></td>
+    <td><%= patient.lastvisit %></td>
+    <td><%= link_to 'Show', patient %></td>
+    <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+    <td><%= link_to 'Destroy', patient, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Patient', new_patient_path %>

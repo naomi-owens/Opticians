@@ -1,0 +1,5 @@
+<%= form_tag("/search", :method => "get") do %>
+<%=label_tag(:q, "Find a patient:")%>
+<%=text_field_tag(:q, params[:q], :id => 'q_field')%>
+<%=submit_tag("Go")%>
+<%end%>

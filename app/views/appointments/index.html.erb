@@ -1,0 +1,36 @@
+<h1>Listing appointments</h1>
+
+<table>
+  <tr>
+    <th>Starttime</th>
+    <th>Endtime</th>
+    <th>Date</th>
+    <th>Patient</th>
+    <th>Optician</th>
+    <th>Appointmenttype</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @appointments.each do |appointment| %>
+  <tr>
+    <td><%= appointment.starttime.strftime("%H:%M") %></td></t>
+    <td>&nbsp;&nbsp;&nbsp;<%= appointment.endtime.strftime("%H:%M") %></td>
+    <td>&nbsp;&nbsp;&nbsp;<%= appointment.date.strftime("%d/%m/%Y") %></td>
+    <td>&nbsp;&nbsp;&nbsp;<%= Patient.find_by_id(appointment.patient_id).firstname %> <%= Patient.find_by_id(appointment.patient_id).lastname %></td>
+    <td>&nbsp;&nbsp;&nbsp;<%= Optician.find_by_id(appointment.optician_id).firstname %></td>
+    <td>&nbsp;&nbsp;&nbsp;<%= appointment.appointmenttype %></td>
+    <td>&nbsp;&nbsp;&nbsp;<%= appointment.status %></td>
+    <td>&nbsp;&nbsp;&nbsp;<%= link_to 'Show', appointment %></td>
+    <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
+    <td><%= link_to 'Destroy', appointment, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Appointment', new_appointment_path %>
+
